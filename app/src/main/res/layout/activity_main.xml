@@ -50,7 +50,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:labelFor="@id/edtN2"
+                android:labelFor="@+id/edtN1"
                 android:text="@string/strN1" />
 
             <EditText

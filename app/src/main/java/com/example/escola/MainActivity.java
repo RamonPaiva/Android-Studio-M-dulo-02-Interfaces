@@ -30,21 +30,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calcular(View view) {
-        // fazendo a media
-        float n1 = Float.parseFloat(edtN1.getText().toString());
-        float n2 = Float.parseFloat(edtN2.getText().toString());
-        float m = (n1 + n2)/2;
-        //resultado da media
-        txtM.setText(String.format("%.1f", m));
-        //resultado situacao
-        if (m < 5) {
-            txtSit.setText(getString(R.string.strSitRp));
+        boolean ok = true;
+        if (edtN1.getText().toString().trim().isEmpty()){
+            ok = false;
+            edtN1.setError(getString(R.string.msgErro));
         }
-        else if(m < 7){
-            txtSit.setText(getString(R.string.strSitRc));
+        if (edtN2.getText().toString().trim().isEmpty()){
+            ok = false;
+            edtN2.setError(getString(R.string.msgErro));
         }
-        else {
-            txtSit.setText(getString(R.string.strSitAp));
+        if (ok) {
+            // fazendo a media
+            float n1 = Float.parseFloat(edtN1.getText().toString());
+            float n2 = Float.parseFloat(edtN2.getText().toString());
+            float m = (n1 + n2)/2;
+            //resultado da media
+            txtM.setText(String.format("%.1f", m));
+            //resultado situacao
+            if (m < 5) {
+                txtSit.setText(getString(R.string.strSitRp));
+            }
+            else if(m < 7){
+                txtSit.setText(getString(R.string.strSitRc));
+            }
+            else {
+                txtSit.setText(getString(R.string.strSitAp));
+            }
         }
     }
 }

@@ -13,4 +13,5 @@
     <string name="strMsgAp">Ai ai ai ai!</string>
     <string name="strMsgRc">Estudito meninito!</string>
     <string name="strMsgRp">Que tristito!</string>
+    <string name="msgErro">Digitito um numerito!</string>
 </resources>

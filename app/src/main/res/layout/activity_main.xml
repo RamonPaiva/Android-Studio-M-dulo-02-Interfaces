@@ -120,6 +120,7 @@
                 android:id="@+id/imgSit"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
+                android:contentDescription="@string/strSit"
                 app:srcCompat="@drawable/emojireprovado" />
         </LinearLayout>
     </LinearLayout>

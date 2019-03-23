@@ -30,9 +30,7 @@ public class MainActivity extends AppCompatActivity {
         layResult = findViewById(R.id.layResult);
         imgSit =  findViewById(R.id.imgSit);
 
-
-
-
+        layResult.setVisibility(View.INVISIBLE);
     }
 
     public void calcular(View view) {
@@ -46,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             edtN2.setError(getString(R.string.msgErro));
         }
         if (ok) {
+            layResult.setVisibility(View.VISIBLE);
             // fazendo a media
             float n1 = Float.parseFloat(edtN1.getText().toString());
             float n2 = Float.parseFloat(edtN2.getText().toString());
@@ -74,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), getString(R.string.strMsgAp), Toast.LENGTH_LONG).show();
                 imgSit.setImageResource(R.drawable.emojiaprovado);
             }
+
         }
     }
 }

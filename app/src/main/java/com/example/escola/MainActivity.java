@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,16 +53,19 @@ public class MainActivity extends AppCompatActivity {
                 // reprovado
                 txtSit.setText(getString(R.string.strSitRp));
                 txtSit.setTextColor(getResources().getColor(R.color.corReprovado));
+                Toast.makeText(getApplicationContext(), getString(R.string.strMsgRp),Toast.LENGTH_LONG).show();
             }
             else if(m < 7){
                 // recuperacao
                 txtSit.setText(getString(R.string.strSitRc));
                 txtSit.setTextColor(getResources().getColor(R.color.corRecuperacao));
+                Toast.makeText(getApplicationContext(), getString(R.string.strMsgRc), Toast.LENGTH_LONG).show();
             }
             else {
                 // aprovado
                 txtSit.setText(getString(R.string.strSitAp));
                 txtSit.setTextColor(getResources().getColor(R.color.corAprovado));
+                Toast.makeText(getApplicationContext(), getString(R.string.strMsgAp), Toast.LENGTH_LONG).show();
             }
         }
     }

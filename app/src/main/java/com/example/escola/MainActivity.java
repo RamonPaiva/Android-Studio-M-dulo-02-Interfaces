@@ -1,5 +1,6 @@
 package com.example.escola;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -48,13 +49,19 @@ public class MainActivity extends AppCompatActivity {
             txtM.setText(String.format("%.1f", m));
             //resultado situacao
             if (m < 5) {
+                // reprovado
                 txtSit.setText(getString(R.string.strSitRp));
+                txtSit.setTextColor(getResources().getColor(R.color.corReprovado));
             }
             else if(m < 7){
+                // recuperacao
                 txtSit.setText(getString(R.string.strSitRc));
+                txtSit.setTextColor(getResources().getColor(R.color.corRecuperacao));
             }
             else {
+                // aprovado
                 txtSit.setText(getString(R.string.strSitAp));
+                txtSit.setTextColor(getResources().getColor(R.color.corAprovado));
             }
         }
     }

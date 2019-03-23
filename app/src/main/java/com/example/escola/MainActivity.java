@@ -1,9 +1,11 @@
 package com.example.escola;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtM, txtSit;
     LinearLayout layResult;
     ImageView imgSit;
+    InputMethodManager imm;
 
 
     @Override
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         txtSit = findViewById(R.id.txtSit);
         layResult = findViewById(R.id.layResult);
         imgSit =  findViewById(R.id.imgSit);
+        imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
         layResult.setVisibility(View.INVISIBLE);
     }
@@ -44,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             edtN2.setError(getString(R.string.msgErro));
         }
         if (ok) {
+            imm.hideSoftInputFromWindow(edtN1.getWindowToken(), 0);
             layResult.setVisibility(View.VISIBLE);
             // fazendo a media
             float n1 = Float.parseFloat(edtN1.getText().toString());
